@@ -12,13 +12,29 @@ public class BallMove : MonoBehaviour
         //Debug.Log("LOG");
         //Debug.LogWarning("WARRNING");
         //Debug.LogError("ERROR");
-        //Application.targetFrameRate = 15;
+        //Application.targetFrameRate = 5;
         ball = this.gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
         //Debug.Log("LOG in UPDATE METHOD");
         //Debug.LogError("ERROR");
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ball.AddForce(-transform.right * powerImpulse);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ball.AddForce(transform.right * powerImpulse);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ball.AddForce(transform.forward * powerImpulse);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ball.AddForce(-transform.forward * powerImpulse);
+        }
     }
     public void MoveUp()
     {

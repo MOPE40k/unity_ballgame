@@ -18,8 +18,8 @@ public class NextLevel : MonoBehaviour
     {
         print("NextLevel");
     }
-    void Congrats(bool textControl)
+    void Congrats(bool value)
     {
-        congrats.SetActive(textControl);
+        congrats.SetActive(value);
     }
 }
